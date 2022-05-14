@@ -1,0 +1,103 @@
+﻿{
+  //关于Excel读取的配置
+  "ExcelReadOptions": {
+
+    //  /// <summary>
+    /// HSSFWorkbook:是操作Excel2003以前（包括2003）的版本，扩展名是.xls；
+    /// XSSFWorkbook: 是操作Excel2007后的版本，扩展名是.xlsx；
+    /// SXSSFWorkbook: "是操作Excel2007后的版本，扩展名是.xlsx；" 大型excel的创建使用这个
+    /// </summary>
+    "WorkbookType": "XSSFWorkbook",
+
+    //读取失败次数达到配置值后,不再继续读取excel中的行 全局默认配置
+    "ReadFailed": 5,
+
+    //从Excel的第几行开始读取 全局默认配置
+    "StartRowIndex": 0,
+
+    //Excel于实体的映射配置
+    "ReadItemsOptions": [
+      {
+        "SheetName": "Sheet1",
+
+        //从Excel的第几行开始读取
+        "StartRowIndex": 0,
+
+        //每行读取到excel单元格的截止索引
+        "EndColumnIndex": 2,
+
+        //Excel映射到的实体类  注意:实体类要用完全限定名
+        "EntityType": "Framework.AspNetCore.Test.Person",
+
+        //Excel映射配置
+        "MapOptions": [
+          {
+            "PropertyName": "Name",
+            "CellName": "姓名"
+          },
+          {
+            "PropertyName": "Age",
+            "CellName": "年龄"
+          }
+        ]
+      }
+    ]
+  },
+
+  //关于Excel写入的配置
+  "ExcelWriteOptions": {
+    //默认工作簿类型 全局默认配置
+    "WorkbookType": "XSSFWorkbook",
+
+    //从第几行开始写入 全局默认配置
+    "StartRowIndex": 0,
+
+    //从第几行开始写入 全局默认配置
+    "StartCellIndex": 0,
+
+    //时间格式 全局默认配置
+    "DateFormat": "yyyy-MM-dd HH:mm:ss",
+
+    //Excel于实体的映射配置
+    "WriteItemsOptions": [
+      {
+        "SheetName": "人员信息",
+
+        //Excel映射到的实体类  注意:实体类要用完全限定名
+        "EntityType": "Framework.AspNetCore.Test.Person",
+
+        //Excel映射配置
+        "MapOptions": [
+          {
+            "PropertyName": "Name",
+            "CellName": "姓名"
+          },
+          {
+            "PropertyName": "Age",
+            "CellName": "年龄"
+          }
+        ]
+      },
+      {
+        "SheetName": "工作信息",
+
+        //Excel映射到的实体类  注意:实体类要用完全限定名
+        "EntityType": "Framework.AspNetCore.Test.WorkRecord",
+
+        //Excel映射配置
+        "MapOptions": [
+          {
+            "PropertyName": "WorkTime",
+            "CellName": "日期",
+            "CellWidth": 5000
+          },
+          {
+            "PropertyName": "Content",
+            "CellName": "工作内容",
+            "CellWidth": 10000
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,192 @@
+﻿{
+  //关于Excel读取的配置
+  "ExcelReadOptions": {
+
+    //  /// <summary>
+    /// HSSFWorkbook:是操作Excel2003以前（包括2003）的版本，扩展名是.xls；
+    /// XSSFWorkbook: 是操作Excel2007后的版本，扩展名是.xlsx；
+    /// SXSSFWorkbook: "是操作Excel2007后的版本，扩展名是.xlsx；" 大型excel的创建使用这个
+    /// </summary>
+    "WorkbookType": "XSSFWorkbook",
+
+    //读取失败次数达到配置值后,不再继续读取excel中的行 全局默认配置
+    "ReadFailed": 5,
+
+    //从Excel的第几行开始读取 全局默认配置
+    "StartRowIndex": 0,
+
+    //Excel于实体的映射配置
+    "ReadItemsOptions": [
+      {
+        //从Excel的第几行开始读取
+        "StartRowIndex": 0,
+
+        //每行读取到excel单元格的截止索引
+        "EndColumnIndex": 11,
+
+        //Excel映射到的实体类  注意:实体类要用完全限定名
+        "EntityType": "Framework.Excel.Npoi.Tests.UserCreateDto",
+
+        //Excel映射配置
+        "MapOptions": [
+          {
+            "PropertyName": "Name",
+            "CellName": "姓名"
+          },
+          {
+            "PropertyName": "IdCard",
+            "CellName": "身份证号"
+          },
+          {
+            "PropertyName": "Sex",
+            "CellName": "性别"
+          },
+          {
+            "PropertyName": "PhoneNumber",
+            "CellName": "手机号"
+          },
+          {
+            "PropertyName": "CarNumber",
+            "CellName": "车牌号"
+          },
+          {
+            "PropertyName": "OrganizationUnit",
+            "CellName": "所属单位"
+          },
+          {
+            "PropertyName": "Department",
+            "CellName": "所属部门"
+          },
+          {
+            "PropertyName": "Role",
+            "CellName": "所属岗位"
+          },
+          {
+            "PropertyName": "IsLeader",
+            "CellName": "是否委领导"
+          },
+          {
+            "PropertyName": "IsStayed",
+            "CellName": "是否安排住宿"
+          },
+          {
+            "PropertyName": "RoomType",
+            "CellName": "房间类型"
+          }
+        ]
+      }
+    ]
+  },
+
+  //关于Excel写入的配置
+  "ExcelWriteOptions": {
+    //默认工作簿类型 全局默认配置
+    "WorkbookType": "HSSFWorkbook",
+
+    //从第几行开始写入 全局默认配置
+    "StartRowIndex": 0,
+
+    //从第几行开始写入 全局默认配置
+    "StartCellIndex": 0,
+
+    //时间格式 全局默认配置
+    "DateFormat": "yyyy-MM-dd HH:mm:ss",
+
+    //Excel于实体的映射配置
+    "WriteItemsOptions": [
+      {
+        "SheetName": "人员信息",
+        //时间格式 全局默认配置
+        "DateFormat": "yyyy-MM-dd HH:mm:ss",
+        //Excel映射到的实体类  注意:实体类要用完全限定名
+        "EntityType": "AcessControl.Domain.Shared.Dto.UserPreRegistrationDto",
+
+        //Excel映射配置
+        "MapOptions": [
+          {
+            "PropertyName": "batchNumber",
+            "CellName": "批次号"
+          },
+          {
+            "PropertyName": "NAME",
+            "CellName": "姓名"
+          },
+          {
+            "PropertyName": "sex",
+            "CellName": "性别"
+          },
+          {
+            "PropertyName": "IdCard",
+            "CellName": "身份证号"
+          },
+          {
+            "PropertyName": "unit_name",
+            "CellName": "单位"
+          },
+          {
+            "PropertyName": "roomTime",
+            "CellName": "批量导入时间"
+          },
+          {
+            "PropertyName": "rolename",
+            "CellName": "人员类型"
+          },
+          {
+            "PropertyName": "typename",
+            "CellName": "领卡方式"
+          },
+          {
+            "PropertyName": "Building",
+            "CellName": "幢号"
+          },
+          {
+            "PropertyName": "Floor",
+            "CellName": "楼层"
+          },
+          {
+            "PropertyName": "RoomNumber",
+            "CellName": "房间名"
+          },
+          {
+            "PropertyName": "roomType",
+            "CellName": "房间类型"
+          },
+          {
+            "PropertyName": "Infoname",
+            "CellName": "预约人员"
+          },
+          {
+            "PropertyName": "RegisterTime",
+            "CellName": "预约入住时间"
+          },
+          {
+            "PropertyName": "RegisterDuration",
+            "CellName": "预约入住时长"
+          },
+          {
+            "PropertyName": "RegisterState",
+            "CellName": "预约状态"
+          }
+        ]
+      },
+      {
+        "SheetName": "人员信息",
+        //时间格式 全局默认配置
+        "DateFormat": "yyyy-MM-dd HH:mm:ss",
+        //Excel映射到的实体类  注意:实体类要用完全限定名
+        "EntityType": "Framework.Excel.Npoi.Tests.Person",
+        "MapOptions": [
+          {
+            "PropertyName": "Name",
+            "CellName": "姓名"
+          },
+          {
+            "PropertyName": "Age",
+            "CellName": "年龄"
+          }
+        ]
+
+      }
+    ]
+  }
+}

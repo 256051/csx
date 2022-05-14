@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Framework.AspNetCore.Test</name>
+    </assembly>
+    <members>
+        <member name="T:Framework.AspNetCore.Test.AuthenticationFilter">
+            <summary>
+            认证过过滤器
+            </summary>
+        </member>
+        <member name="M:Framework.AspNetCore.Test.Controllers.TestController.TestNoModule(System.String,System.Int32)">
+            <summary>
+            测试Swaggerget请求注释
+            </summary>
+            <param name="name">姓名</param>
+            <param name="age">年龄</param>
+            <returns></returns>
+        </member>
+        <member name="T:Framework.AspNetCore.Test.Controllers.TestEnum">
+            <summary>
+            测试枚举
+            </summary>
+        </member>
+        <member name="F:Framework.AspNetCore.Test.Controllers.TestEnum.One">
+            <summary>
+            枚举一
+            </summary>
+        </member>
+        <member name="F:Framework.AspNetCore.Test.Controllers.TestEnum.Two">
+            <summary>
+            枚举二
+            </summary>
+        </member>
+        <member name="P:Framework.AspNetCore.Test.Controllers.ApiTestController.TestRequest.Name">
+            <summary>
+            测试字段 长度不能大于10
+            </summary>
+        </member>
+        <member name="P:Framework.AspNetCore.Test.Controllers.ApiTestController.TestRequest.TestEnum">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Framework.AspNetCore.Test.Controllers.ApiTestController.TestResponse.Data">
+            <summary>
+            响应
+            </summary>
+        </member>
+        <member name="P:Framework.AspNetCore.Test.Controllers.ApiTestController.TestResponse.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="M:Framework.AspNetCore.Test.Controllers.ApiTestController.Get(Framework.AspNetCore.Test.Controllers.ApiTestController.TestRequest)">
+            <summary>
+            测试Swagger获取方法
+            </summary>
+        </member>
+        <member name="M:Framework.AspNetCore.Test.Controllers.ApiTestController.GetTest(System.String,System.Int32)">
+            <summary>
+            测试Swaggerget请求注释
+            </summary>
+            <param name="name">姓名</param>
+            <param name="age">年龄</param>
+            <returns></returns>
+        </member>
+        <member name="P:Framework.AspNetCore.Test.Controllers.WeatherForecastController.TestModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="M:Framework.AspNetCore.Test.Controllers.WeatherForecastController.TestValidate(Framework.AspNetCore.Test.Controllers.WeatherForecastController.Person)">
+            <summary>
+            测试模块一  方法
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Framework.AspNetCore.Test.Startup.ConfigureFrameworkModules(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置框架模块 记载必须的业务组件
+            </summary>
+        </member>
+        <member name="M:Framework.AspNetCore.Test.Startup.ConfigureServiceModules">
+            <summary>
+            配置业务模块
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>3.0.2</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Quartz" Version="3.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Framework.BackgroundJobs.Abstractions\Framework.BackgroundJobs.Abstractions.csproj" />
+    <ProjectReference Include="..\Framework.Core\Framework.Core.csproj" />
+    <ProjectReference Include="..\Framework.Json\Framework.Json.csproj" />
+    <ProjectReference Include="..\Framework.Quartz\Framework.Quartz.csproj" />
+    <ProjectReference Include="..\Framework.Timing\Framework.Timing.csproj" />
+  </ItemGroup>
+
+</Project>

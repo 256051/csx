@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework.AspNetCore.WebSocket\Framework.AspNetCore.WebSocket.csproj" />
+    <ProjectReference Include="..\..\Framework.Json\Framework.Json.csproj" />
+    <ProjectReference Include="..\..\Framework.Logging\Framework.Logging.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\websocketclient.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WPSM.Data.Domain" Version="1.0.0" />
+    <PackageReference Include="WPSM.Data.Mq.Domain" Version="1.0.0" />
+    <PackageReference Include="WPSM.Data.Mq.Local.Store" Version="1.0.1" />
+    <PackageReference Include="WPSM.Data.Mq.Store" Version="1.0.0" />
+    <PackageReference Include="WPSM.Data.Store" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

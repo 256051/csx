@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Framework.AspNetCore.Test</name>
+    </assembly>
+    <members>
+        <member name="P:Framework.AspNetCore.Test.Controllers.ApiTestController.TestRequest.Name">
+            <summary>
+            测试字段
+            </summary>
+        </member>
+        <member name="P:Framework.AspNetCore.Test.Controllers.ApiTestController.TestResponse.Data">
+            <summary>
+            响应
+            </summary>
+        </member>
+        <member name="P:Framework.AspNetCore.Test.Controllers.ApiTestController.TestResponse.Age">
+            <summary>
+            年龄
+            </summary>
+        </member>
+        <member name="M:Framework.AspNetCore.Test.Controllers.ApiTestController.Get(Framework.AspNetCore.Test.Controllers.ApiTestController.TestRequest)">
+            <summary>
+            测试Swagger获取方法
+            </summary>
+        </member>
+        <member name="P:Framework.AspNetCore.Test.Controllers.WeatherForecastController.TestModel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="M:Framework.AspNetCore.Test.Startup.ConfigureFrameworkModules(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置框架模块 记载必须的业务组件
+            </summary>
+        </member>
+        <member name="M:Framework.AspNetCore.Test.Startup.ConfigureServiceModules">
+            <summary>
+            配置业务模块
+            </summary>
+        </member>
+    </members>
+</doc>
