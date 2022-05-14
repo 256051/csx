@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>3.0.3</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework.AutoMapper\Framework.AutoMapper.csproj" />
+    <ProjectReference Include="..\..\Framework.DDD.Application.Contracts\Framework.DDD.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Framework.ExceptionHandling.Dapper\Framework.ExceptionHandling.Dapper.csproj" />
+  </ItemGroup>
+
+</Project>

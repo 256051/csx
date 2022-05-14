@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework.AspNetCore.Mvc\Framework.AspNetCore.Mvc.csproj" />
+    <ProjectReference Include="..\..\Framework.Core\Framework.Core.csproj" />
+    <ProjectReference Include="..\Framework.AspNetCore.SignalR\Framework.AspNetCore.SignalR.csproj" />
+    <ProjectReference Include="..\..\Framework.AspNetCore\Framework.AspNetCore.csproj" />
+    <ProjectReference Include="..\..\Framework.Dapper\Framework.Dapper.csproj" />
+    <ProjectReference Include="..\..\Framework.Data.MySql\Framework.Data.MySql.csproj" />
+    <ProjectReference Include="..\Framework.IM.Message.Dapper\Framework.IM.Message.Dapper.csproj" />
+    <ProjectReference Include="..\Framework.IM.Message.Domain.Shared\Framework.IM.Message.Domain.Shared.csproj" />
+    <ProjectReference Include="..\Framework.IM.Message.Domain\Framework.IM.Message.Domain.csproj" />
+    <ProjectReference Include="..\Framework.IM.Message.Store\Framework.IM.Message.Store.csproj" />
+    <ProjectReference Include="..\..\Framework.Json\Framework.Json.csproj" />
+    <ProjectReference Include="..\..\Framework.Logging\Framework.Logging.csproj" />
+    <ProjectReference Include="..\..\Framework.Security\Framework.Security.csproj" />
+    <ProjectReference Include="..\..\Framework.Serilog\Framework.Serilog.csproj" />
+    <ProjectReference Include="..\..\Framework.Speech\Framework.Speech.csproj" />
+    <ProjectReference Include="..\..\Framework.Uow\Framework.Uow.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body id="container">
+    <div id="progress_1"></div>
+    <div id="progress_2"></div>
+    <script src="signalr.js"></script>
+    <script src="msgpack5.js"></script>
+    <script src="signalr-protocol-msgpack.js"></script>
+    <script src="jquery.min.js"></script>
+</body>
+<script type="text/javascript">
+    var progressid_1 = "asdasdasdasdasdas";
+    var progressid_2 = "asdasdasdasdasdas1";
+
+    var connection_1 = createWs(progressid_1);
+    var connection_2 = createWs(progressid_2);
+     start(connection_1);
+     start(connection_2);
+   
+    connection_1.onclose(async () => {
+        await start();
+    });
+    connection_2.onclose(async () => {
+        await start();
+    });
+
+    function createWs(progressid) {
+        var connection = new signalR.HubConnectionBuilder()
+            .withUrl("http://127.0.0.1:5000/progress?userid=" + progressid)
+            .withHubProtocol(new signalR.protocols.msgpack.MessagePackHubProtocol())
+            .build();
+        return connection;
+    }
+
+    async function start(connection) {
+        try {
+            await connection.start();
+            console.log("连接成功");
+        } catch (err) {
+            setTimeout(start, 5000);
+        }
+    };
+
+   
+
+    connection_1.onclose(async () => {
+        await start();
+    });
+
+    connection_2.onclose(async () => {
+        await start();
+    });
+
+    connection_1.on("PullProgress", function (message) {
+        $('#progress_1').html(message);
+    });
+
+    connection_2.on("PullProgress", function (message) {
+        $('#progress_2').html(message);
+    });
+</script>
+</html>

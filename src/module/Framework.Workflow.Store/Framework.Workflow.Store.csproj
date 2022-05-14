@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>1.1.7</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework.Timing\Framework.Timing.csproj" />
+    <ProjectReference Include="..\Framework.Workflow.Domain\Framework.Workflow.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

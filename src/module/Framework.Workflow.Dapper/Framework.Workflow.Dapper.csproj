@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.2.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper.Contrib" Version="2.0.78" />
+    <PackageReference Include="Framework.Dapper" Version="3.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework.Timing\Framework.Timing.csproj" />
+    <ProjectReference Include="..\Framework.Workflow.Domain.Shared\Framework.Workflow.Domain.Shared.csproj" />
+    <ProjectReference Include="..\Framework.Workflow.Domain\Framework.Workflow.Domain.csproj" />
+    <ProjectReference Include="..\Framework.Workflow.Store\Framework.Workflow.Store.csproj" />
+  </ItemGroup>
+
+</Project>

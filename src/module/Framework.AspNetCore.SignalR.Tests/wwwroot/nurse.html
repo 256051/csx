@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body id="container">
+    <script src="signalr.js"></script>
+    <script src="msgpack5.js"></script>
+    <script src="signalr-protocol-msgpack.js"></script>
+    <script src="jquery.min.js"></script>
+</body>
+<script type="text/javascript">
+    var username = '3111', userid = '3d5e5503-1111-4cb8-9948-61163e81524c', ab = '22222222-2222-4cb8-9948-61163e81524c';
+    var connection = new signalR.HubConnectionBuilder()
+        .withUrl("http://47.96.116.129:9003/chat?userid=" + userid + "&username=" + username)
+        .withAutomaticReconnect()
+        .withHubProtocol(new signalR.protocols.msgpack.MessagePackHubProtocol())
+        .build();
+
+    async function start() {
+        try {
+            await connection.start();
+            connection.invoke("JoinGroup", ab);
+            console.log("连接成功");
+        } catch (err) {
+            setTimeout(start, 5000);
+        }
+    };
+    start();
+    connection.onclose(async () => {
+        await start();
+    });
+
+    /*
+     * 接收到第三方的消息
+     * */
+    connection.on("Receive", function (message) {
+         message = JSON.parse(message);
+        var audio = new Audio(message['mediaFilePath']);
+        audio.play();
+        $('#container').append('<div>' + message.message + '</div>');
+    });
+</script>
+</html>

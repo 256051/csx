@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>f8c27f2f-06b6-4746-8835-fad9133d9b52</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\websocketclient.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\websocketclient.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework.Core\Framework.Core.csproj" />
+    <ProjectReference Include="..\Framework.AspNetCore.SignalR.Application\Framework.AspNetCore.SignalR.Application.csproj" />
+  </ItemGroup>
+
+</Project>
