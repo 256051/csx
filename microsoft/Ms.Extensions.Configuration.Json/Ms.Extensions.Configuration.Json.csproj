@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ms.Extensions.FileProviders.Abstractions\Ms.Extensions.FileProviders.Abstractions.csproj" />
+    <ProjectReference Include="..\Ms.Configuration.Abstracts\Ms.Configuration.Abstracts.csproj" />
+    <ProjectReference Include="..\Ms.Configuration.FileExtensions\Ms.Configuration.FileExtensions.csproj" />
+  </ItemGroup>
+
+</Project>

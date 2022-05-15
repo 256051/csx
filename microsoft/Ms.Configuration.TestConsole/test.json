@@ -1,0 +1,11 @@
+﻿{
+  "MySqlDbOptions": {
+    "ConnectionName": "asdasd",
+    "ConnectionString": "asdasdasdas",
+    "Numbers": [ 1, 2, 3 ],
+    "ChildOptions": {
+      "Index": 1,
+      "Name": "张三"
+    }
+  }
+}

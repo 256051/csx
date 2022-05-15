@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ms.Extensions.Logging.Abstracts\Ms.Extensions.Logging.Abstracts.csproj" />
+    <ProjectReference Include="..\Ms.Extensions.Options\Ms.Extensions.Options.csproj" />
+  </ItemGroup>
+
+</Project>

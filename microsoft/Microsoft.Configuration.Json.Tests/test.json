@@ -1,0 +1,47 @@
+﻿{
+  //Mysql数据库配置
+  "MySqlDbOptions": {
+    "ConnectionName": "qzban_logistics",
+    "ConnectionString": "Database=qzban_logistics;Data Source=172.18.100.231;User Id=root;Password=panchina;CharSet=utf8;port=3306;Allow User Variables=True;",
+    "Numbers": [ 1, 2, 3 ],
+    "Childs": [
+      {
+        "Index": 1,
+        "Name": "张三"
+      },
+      {
+        "Index": 2,
+        "Name": "李四"
+      }
+    ]
+  },
+  //日志配置
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information1"
+    }
+  },
+  //Excel配置
+  "ExcelOptions": {
+    //excel实体配置文件
+    "ConfigFile": "excelsettings.json"
+  },
+  //Swagger配置
+  "SwaggerOptions": {
+    //标题
+    "Title": "后勤系统开放Api",
+    "Version": "v1",
+    "VersionDescription": "默认版本"
+  },
+  //远程服务
+  "AccessControlConfiguration": {
+    //认证中心地址
+    "Authentication": "http://223.94.122.100:8314",
+    //业务品台地址
+    "ServicePlatform": "http://223.94.122.100:9080"
+  },
+  //文件存储地址
+  "FileSystem.BasePath": "D:\\后勤系统资源存放目录\\"
+}
