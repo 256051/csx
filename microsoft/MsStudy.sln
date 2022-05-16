@@ -55,13 +55,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.IdentityModel.Pro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.IdentityModel.Tokens.Jwt", "identitymodel\System.IdentityModel.Tokens.Jwt\System.IdentityModel.Tokens.Jwt.csproj", "{89A8C2DB-13B7-49E3-9190-677BF4C5D6F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityModel.Tokens.Jwt", "IdentityModel.Tokens.Jwt\IdentityModel.Tokens.Jwt.csproj", "{BF092557-4C49-47A5-82BC-4DE1F39F516B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityModel.Tokens.Jwt", "IdentityModel.Tokens.Jwt\IdentityModel.Tokens.Jwt.csproj", "{BF092557-4C49-47A5-82BC-4DE1F39F516B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.IdentityModel.Tokens", "identitymodel\Microsoft.IdentityModel.Tokens\Microsoft.IdentityModel.Tokens.csproj", "{75D7A985-CE3D-464E-AA58-23206349C033}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityModel.Tokens", "IdentityModel.Tokens\IdentityModel.Tokens.csproj", "{320AE5C1-719B-4749-A8B6-78391620C2CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityModel.Tokens", "IdentityModel.Tokens\IdentityModel.Tokens.csproj", "{320AE5C1-719B-4749-A8B6-78391620C2CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ms.AspNetCore.Authentication.OpenIdConnect", "Ms.AspNetCore.Authentication.OpenIdConnect\Ms.AspNetCore.Authentication.OpenIdConnect.csproj", "{FFB331C5-2BA7-47C4-9F0A-661F374A85F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ms.AspNetCore.Authentication.OpenIdConnect", "Ms.AspNetCore.Authentication.OpenIdConnect\Ms.AspNetCore.Authentication.OpenIdConnect.csproj", "{FFB331C5-2BA7-47C4-9F0A-661F374A85F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityModel.Protocols", "IdentityModel.Protocols\IdentityModel.Protocols.csproj", "{59AC1105-8C3C-43F5-A636-7A44EF1F328D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityModel.Protocols.OpenIdConnect", "IdentityModel.Protocols.OpenIdConnect\IdentityModel.Protocols.OpenIdConnect.csproj", "{68908858-A0C4-4057-85B5-CBAC6AFB178E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -169,6 +173,14 @@ Global
 		{FFB331C5-2BA7-47C4-9F0A-661F374A85F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFB331C5-2BA7-47C4-9F0A-661F374A85F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFB331C5-2BA7-47C4-9F0A-661F374A85F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59AC1105-8C3C-43F5-A636-7A44EF1F328D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59AC1105-8C3C-43F5-A636-7A44EF1F328D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59AC1105-8C3C-43F5-A636-7A44EF1F328D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59AC1105-8C3C-43F5-A636-7A44EF1F328D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68908858-A0C4-4057-85B5-CBAC6AFB178E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68908858-A0C4-4057-85B5-CBAC6AFB178E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68908858-A0C4-4057-85B5-CBAC6AFB178E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68908858-A0C4-4057-85B5-CBAC6AFB178E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -198,6 +210,8 @@ Global
 		{75D7A985-CE3D-464E-AA58-23206349C033} = {711AAFB9-11F2-4C7A-9599-0281C1157891}
 		{320AE5C1-719B-4749-A8B6-78391620C2CA} = {E3ADB7A8-77AC-4382-9582-9A02A3CCD80D}
 		{FFB331C5-2BA7-47C4-9F0A-661F374A85F7} = {E3ADB7A8-77AC-4382-9582-9A02A3CCD80D}
+		{59AC1105-8C3C-43F5-A636-7A44EF1F328D} = {E3ADB7A8-77AC-4382-9582-9A02A3CCD80D}
+		{68908858-A0C4-4057-85B5-CBAC6AFB178E} = {E3ADB7A8-77AC-4382-9582-9A02A3CCD80D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {20ADF333-C253-4017-88E2-83D01D6BAAA2}

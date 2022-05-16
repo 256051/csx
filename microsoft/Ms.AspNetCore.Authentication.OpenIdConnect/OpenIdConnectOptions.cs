@@ -1,6 +1,8 @@
 // Copyright (c) .NET Foundation. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
+using IdentityModel.Protocols;
+using IdentityModel.Protocols.OpenIdConnect;
 using IdentityModel.Tokens;
 using IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authentication;
@@ -91,6 +93,13 @@ namespace Ms.AspNetCore.Authentication.OpenIdConnect
 
         public ISecureDataFormat<AuthenticationProperties> StateDataFormat { get; set; }
 
+        public ISecureDataFormat<string> StringDataFormat { get; set; }
+
+        /// <summary>
+        /// 客户端id
+        /// </summary>
+        public string ClientId { get; set; }
+
         private class OpenIdConnectNonceCookieBuilder : RequestPathBaseCookieBuilder
         {
             private readonly OpenIdConnectOptions _options;
@@ -114,5 +123,26 @@ namespace Ms.AspNetCore.Authentication.OpenIdConnect
                 return cookieOptions;
             }
         }
+
+        public TokenValidationParameters TokenValidationParameters { get; set; } = new TokenValidationParameters();
+
+        public IConfigurationManager<OpenIdConnectConfiguration> ConfigurationManager { get; set; }
+
+        public OpenIdConnectConfiguration Configuration { get; set; }
+
+        /// <summary>
+        /// 获取或设置用于获取元数据的发现终结点
+        /// </summary>
+        public string MetadataAddress { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Authority { get; set; }
+
+        /// <summary>
+        /// https启用
+        /// </summary>
+        public bool RequireHttpsMetadata { get; set; } = true;
     }
 }
