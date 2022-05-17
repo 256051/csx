@@ -25,22 +25,17 @@
 //
 //------------------------------------------------------------------------------
 
-using IdentityModel.Tokens;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-
-namespace IdentityModel.Protocols.OpenIdConnect
+namespace IdentityModel.Tokens
 {
-    public class OpenIdConnectConfiguration
+    /// <summary>
+    /// Constants for JsonWebKeyUse (sec 4.2)
+    /// http://tools.ietf.org/html/rfc7517#section-4
+    /// </summary>
+    public static class JsonWebKeyUseNames
     {
-        public string JwksUri { get; set; }
-
-        public JsonWebKeySet JsonWebKeySet { get; set; }
-
-        [JsonIgnore]
-        public ICollection<SecurityKey> SigningKeys { get; } = new Collection<SecurityKey>();
+#pragma warning disable 1591
+        public const string Sig = "sig";
+        public const string Enc = "enc";
+#pragma warning restore 1591
     }
 }

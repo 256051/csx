@@ -25,37 +25,57 @@
 //
 //------------------------------------------------------------------------------
 
-using System.Security.Cryptography;
-
 namespace IdentityModel.Tokens
 {
     /// <summary>
-    /// Provides extensibility for cryptographic operators.
-    /// If custom operators are needed for then <see cref="CryptoProviderFactory.CustomCryptoProvider"/> can be set to
-    /// return these operators. <see cref="CryptoProviderFactory.CustomCryptoProvider"/> will be before each creation.
+    /// Base class for a Security Key that contains Asymmetric key material.
     /// </summary>
-    public interface ICryptoProvider
+    public abstract class AsymmetricSecurityKey : SecurityKey
     {
         /// <summary>
-        /// Called to determine if a cryptographic operation is supported.
+        /// Default constructor
         /// </summary>
-        /// <param name="algorithm">the algorithm that defines the cryptographic operator.</param>
-        /// <param name="args">the arguments required by the cryptographic operator. May be null.</param>
-        /// <returns>true if supported</returns>
-        bool IsSupportedAlgorithm(string algorithm, params object[] args);
+        public AsymmetricSecurityKey()
+        {
+        }
+
+        internal AsymmetricSecurityKey(SecurityKey key)
+            : base(key)
+        {
+        }
 
         /// <summary>
-        /// returns a cryptographic operator that supports the algorithm.
+        /// This must be overridden to get a bool indicating if a private key exists.
         /// </summary>
-        /// <param name="algorithm">the algorithm that defines the cryptographic operator.</param>
-        /// <param name="args">the arguments required by the cryptographic operator. May be null.</param>
-        /// <remarks>call <see cref="ICryptoProvider.Release(object)"/> when finished with the object.</remarks>
-        object Create(string algorithm, params object[] args);
+        /// <return>true if it has a private key; otherwise, false.</return>
+        [System.Obsolete("HasPrivateKey method is deprecated, please use PrivateKeyStatus instead.")]
+        public abstract bool HasPrivateKey { get; }
 
         /// <summary>
-        /// called to release the object returned from <see cref="ICryptoProvider.Create(string, object[])"/>
+        /// Gets the status of the private key.
         /// </summary>
-        /// <param name="cryptoInstance">the object returned from <see cref="ICryptoProvider.Create(string, object[])"/>.</param>
-        void Release(object cryptoInstance);
+        /// <return>'Exists' if private key exists for sure; 'DoesNotExist' if private key doesn't exist for sure; 'Unknown' if we cannot determine.</return>
+        public abstract PrivateKeyStatus PrivateKeyStatus { get; }
     }
+
+    /// <summary>
+    /// Enum for the existence of private key
+    /// </summary>
+    public enum PrivateKeyStatus
+    {
+        /// <summary>
+        /// private key exists for sure
+        /// </summary>
+        Exists,
+
+        /// <summary>
+        /// private key doesn't exist for sure
+        /// </summary>
+        DoesNotExist,
+
+        /// <summary>
+        /// unable to determine the existence of private key
+        /// </summary>
+        Unknown
+    };
 }

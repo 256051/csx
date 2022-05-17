@@ -7,6 +7,9 @@
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\IdentityModel.Protocols.OpenIdConnect\IdentityModel.Protocols.OpenIdConnect.csproj" />
     <ProjectReference Include="..\IdentityModel.Protocols\IdentityModel.Protocols.csproj" />
     <ProjectReference Include="..\IdentityModel.Tokens.Jwt\IdentityModel.Tokens.Jwt.csproj" />

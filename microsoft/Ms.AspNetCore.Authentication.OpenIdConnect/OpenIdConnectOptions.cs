@@ -144,5 +144,14 @@ namespace Ms.AspNetCore.Authentication.OpenIdConnect
         /// https启用
         /// </summary>
         public bool RequireHttpsMetadata { get; set; } = true;
+
+        /// <summary>
+        /// 刷新远程配置的频率
+        /// </summary>
+        public TimeSpan RefreshInterval { get; set; } = ConfigurationManager<OpenIdConnectConfiguration>.DefaultRefreshInterval;
+
+        public TimeSpan AutomaticRefreshInterval { get; set; } = ConfigurationManager<OpenIdConnectConfiguration>.DefaultAutomaticRefreshInterval;
+
+        public bool SkipUnrecognizedRequests { get; set; } = false;
     }
 }

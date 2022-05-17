@@ -25,22 +25,22 @@
 //
 //------------------------------------------------------------------------------
 
-using IdentityModel.Tokens;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
+// System.IdentityModel.Logging
+// Range: MIML10000 - MIML10999
 
-namespace IdentityModel.Protocols.OpenIdConnect
+namespace IdentityModel.Logging
 {
-    public class OpenIdConnectConfiguration
+    /// <summary>
+    /// Log messages and codes for Microsoft.IdentityModel.Logging
+    /// </summary>
+    internal static class LogMessages
     {
-        public string JwksUri { get; set; }
+#pragma warning disable 1591
+        // logging
+        internal const string MIML10000 = "MIML10000: eventData.Payload is null or empty. Not logging any messages.";
+        internal const string MIML10001 = "MIML10001: Cannot create the fileStream or StreamWriter to write logs. See inner exception.";
+        internal const string MIML10002 = "MIML10002: Unknown log level: {0}.";
+#pragma warning restore 1591
 
-        public JsonWebKeySet JsonWebKeySet { get; set; }
-
-        [JsonIgnore]
-        public ICollection<SecurityKey> SigningKeys { get; } = new Collection<SecurityKey>();
     }
 }

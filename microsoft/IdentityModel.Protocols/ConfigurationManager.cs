@@ -76,5 +76,37 @@ namespace IdentityModel.Protocols
         {
             throw new NotImplementedException();
         }
+
+        public static readonly TimeSpan MinimumRefreshInterval = new TimeSpan(0, 0, 0, 1);
+
+        public static readonly TimeSpan MinimumAutomaticRefreshInterval = new TimeSpan(0, 0, 5, 0);
+
+        public static readonly TimeSpan DefaultRefreshInterval = new TimeSpan(0, 0, 0, 30);
+        private TimeSpan _refreshInterval = DefaultRefreshInterval;
+        public TimeSpan RefreshInterval
+        {
+            get { return _refreshInterval; }
+            set
+            {
+                if (value < MinimumRefreshInterval)
+                    throw new Exception("");
+
+                _refreshInterval = value;
+            }
+        }
+
+        public static readonly TimeSpan DefaultAutomaticRefreshInterval = new TimeSpan(1, 0, 0, 0);
+        private TimeSpan _automaticRefreshInterval = DefaultAutomaticRefreshInterval;
+        public TimeSpan AutomaticRefreshInterval
+        {
+            get { return _automaticRefreshInterval; }
+            set
+            {
+                if (value < MinimumAutomaticRefreshInterval)
+                    throw new Exception("");
+
+                _automaticRefreshInterval = value;
+            }
+        }
     }
 }   

@@ -36,5 +36,17 @@ namespace IdentityModel.Tokens
         }
 
         public ICryptoProvider CustomCryptoProvider { get; set; }
+
+        public virtual bool IsSupportedAlgorithm(string algorithm, SecurityKey key)
+        {
+            if (CustomCryptoProvider != null && CustomCryptoProvider.IsSupportedAlgorithm(algorithm, key))
+                return true;
+
+            return SupportedAlgorithms.IsSupportedAlgorithm(
+                        algorithm,
+                        (key is JsonWebKey jsonWebKey && jsonWebKey.ConvertedSecurityKey != null)
+                        ? jsonWebKey.ConvertedSecurityKey
+                        : key);
+        }
     }
 }
