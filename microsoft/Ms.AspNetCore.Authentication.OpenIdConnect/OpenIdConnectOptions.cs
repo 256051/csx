@@ -81,6 +81,11 @@ namespace Ms.AspNetCore.Authentication.OpenIdConnect
         public ClaimActionCollection ClaimActions { get; } = new ClaimActionCollection();
 
         /// <summary>
+        /// Gets or sets the 'client_secret'.
+        /// </summary>
+        public string ClientSecret { get; set; }
+
+        /// <summary>
         /// 协议校验
         /// </summary>
         public OpenIdConnectProtocolValidator ProtocolValidator { get; set; } = new OpenIdConnectProtocolValidator()
@@ -99,6 +104,8 @@ namespace Ms.AspNetCore.Authentication.OpenIdConnect
         /// 客户端id
         /// </summary>
         public string ClientId { get; set; }
+
+        public bool DisableTelemetry { get; set; }
 
         private class OpenIdConnectNonceCookieBuilder : RequestPathBaseCookieBuilder
         {
@@ -130,6 +137,8 @@ namespace Ms.AspNetCore.Authentication.OpenIdConnect
 
         public OpenIdConnectConfiguration Configuration { get; set; }
 
+        public bool UseTokenLifetime { get; set; }
+
         /// <summary>
         /// 获取或设置用于获取元数据的发现终结点
         /// </summary>
@@ -145,6 +154,10 @@ namespace Ms.AspNetCore.Authentication.OpenIdConnect
         /// </summary>
         public bool RequireHttpsMetadata { get; set; } = true;
 
+        public bool GetClaimsFromUserInfoEndpoint { get; set; }
+
+        public bool RefreshOnIssuerKeyNotFound { get; set; } = true;
+
         /// <summary>
         /// 刷新远程配置的频率
         /// </summary>
@@ -153,5 +166,11 @@ namespace Ms.AspNetCore.Authentication.OpenIdConnect
         public TimeSpan AutomaticRefreshInterval { get; set; } = ConfigurationManager<OpenIdConnectConfiguration>.DefaultAutomaticRefreshInterval;
 
         public bool SkipUnrecognizedRequests { get; set; } = false;
+
+        public CookieBuilder NonceCookie
+        {
+            get => _nonceCookieBuilder;
+            set => _nonceCookieBuilder = value ?? throw new ArgumentNullException(nameof(value));
+        }
     }
 }

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\IdentityModel.JsonWebTokens\IdentityModel.JsonWebTokens.csproj" />
     <ProjectReference Include="..\IdentityModel.Tokens\IdentityModel.Tokens.csproj" />
   </ItemGroup>
 

@@ -17,7 +17,6 @@ namespace IdentityModel.Protocols
         private readonly string _metadataAddress;
         private readonly IDocumentRetriever _docRetriever;
         private readonly IConfigurationRetriever<T> _configRetriever;
-        private T _currentConfiguration;
  
 
         /// <summary>

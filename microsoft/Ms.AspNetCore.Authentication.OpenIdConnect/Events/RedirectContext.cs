@@ -1,0 +1,43 @@
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
+
+using Microsoft.AspNetCore.Http;
+using IdentityModel.Protocols.OpenIdConnect;
+using Microsoft.AspNetCore.Authentication;
+
+namespace Ms.AspNetCore.Authentication.OpenIdConnect
+{
+    /// <summary>
+    /// When a user configures the <see cref="OpenIdConnectHandler"/> to be notified prior to redirecting to an IdentityProvider
+    /// an instance of <see cref="RedirectContext"/> is passed to the <see cref="OpenIdConnectEvents.RedirectToIdentityProvider(RedirectContext)"/>
+    /// and <see cref="OpenIdConnectEvents.RedirectToIdentityProviderForSignOut(RedirectContext)"/>.
+    /// </summary>
+    public class RedirectContext : PropertiesContext<OpenIdConnectOptions>
+    {
+        /// <summary>
+        /// Initializes a new instance of <see cref="RedirectContext"/>.
+        /// </summary>
+        /// <inheritdoc />
+        public RedirectContext(
+            HttpContext context,
+            AuthenticationScheme scheme,
+            OpenIdConnectOptions options,
+            AuthenticationProperties properties)
+            : base(context, scheme, options, properties) { }
+
+        /// <summary>
+        /// Gets or sets the <see cref="OpenIdConnectMessage"/>.
+        /// </summary>
+        public OpenIdConnectMessage ProtocolMessage { get; set; }
+
+        /// <summary>
+        /// If true, will skip any default logic for this redirect.
+        /// </summary>
+        public bool Handled { get; private set; }
+
+        /// <summary>
+        /// Skips any default logic for this redirect.
+        /// </summary>
+        public void HandleResponse() => Handled = true;
+    }
+}

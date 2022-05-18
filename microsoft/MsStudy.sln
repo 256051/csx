@@ -69,7 +69,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityModel.Protocols.Ope
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.IdentityModel.Logging", "..\..\azure-activedirectory-identitymodel-extensions-for-dotnet-6.7.1\azure-activedirectory-identitymodel-extensions-for-dotnet-6.7.1\src\Microsoft.IdentityModel.Logging\Microsoft.IdentityModel.Logging.csproj", "{D304D0E2-408B-4C80-95D4-8DCD573E36F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityModel.Logging", "IdentityModel.Logging\IdentityModel.Logging.csproj", "{2D4E2EB5-B86F-4819-B2BB-0BEEE473E174}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityModel.Logging", "IdentityModel.Logging\IdentityModel.Logging.csproj", "{2D4E2EB5-B86F-4819-B2BB-0BEEE473E174}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.IdentityModel.JsonWebTokens", "..\..\azure-activedirectory-identitymodel-extensions-for-dotnet-6.7.1\azure-activedirectory-identitymodel-extensions-for-dotnet-6.7.1\src\Microsoft.IdentityModel.JsonWebTokens\Microsoft.IdentityModel.JsonWebTokens.csproj", "{F778E164-472B-4743-9091-DDCBBFC0ACB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityModel.JsonWebTokens", "IdentityModel.JsonWebTokens\IdentityModel.JsonWebTokens.csproj", "{A20FB5D8-4E2B-4D5C-9616-A998BEA83C5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -193,6 +197,14 @@ Global
 		{2D4E2EB5-B86F-4819-B2BB-0BEEE473E174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D4E2EB5-B86F-4819-B2BB-0BEEE473E174}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D4E2EB5-B86F-4819-B2BB-0BEEE473E174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F778E164-472B-4743-9091-DDCBBFC0ACB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F778E164-472B-4743-9091-DDCBBFC0ACB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F778E164-472B-4743-9091-DDCBBFC0ACB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F778E164-472B-4743-9091-DDCBBFC0ACB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A20FB5D8-4E2B-4D5C-9616-A998BEA83C5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A20FB5D8-4E2B-4D5C-9616-A998BEA83C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A20FB5D8-4E2B-4D5C-9616-A998BEA83C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A20FB5D8-4E2B-4D5C-9616-A998BEA83C5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -226,6 +238,8 @@ Global
 		{68908858-A0C4-4057-85B5-CBAC6AFB178E} = {E3ADB7A8-77AC-4382-9582-9A02A3CCD80D}
 		{D304D0E2-408B-4C80-95D4-8DCD573E36F4} = {711AAFB9-11F2-4C7A-9599-0281C1157891}
 		{2D4E2EB5-B86F-4819-B2BB-0BEEE473E174} = {E3ADB7A8-77AC-4382-9582-9A02A3CCD80D}
+		{F778E164-472B-4743-9091-DDCBBFC0ACB1} = {711AAFB9-11F2-4C7A-9599-0281C1157891}
+		{A20FB5D8-4E2B-4D5C-9616-A998BEA83C5B} = {E3ADB7A8-77AC-4382-9582-9A02A3CCD80D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {20ADF333-C253-4017-88E2-83D01D6BAAA2}
